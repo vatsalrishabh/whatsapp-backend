@@ -33,7 +33,7 @@ async function sendEmail(email, otp) {
     }
 }
 
-// Route to create a new user
+// Route to create a new use
 router.post('/', async (req, res) => {
     try {
         const { name, email, mobile, gender, dpUrl } = req.body;

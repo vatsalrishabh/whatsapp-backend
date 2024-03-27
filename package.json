@@ -4,6 +4,7 @@
     "cors": "^2.8.5",
     "express": "^4.19.1",
     "mongoose": "^8.2.3",
+    "node-fetch": "^3.3.2",
     "nodemailer": "^6.9.13",
     "path": "^0.12.7"
   }
