@@ -2,7 +2,7 @@
 const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
-const connectDB = require('./db'); // Import the connectDB function
+const connectDB = require('./connectDB'); // Import the connectDB function
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -16,6 +16,7 @@ connectDB();
 
 // Define routes
 app.use('/api/register', require('./routes/users')); // User routes
+// app.use('/api/messages', './routes/messageRoutes'); // Message routes
 
 // Start the server
 app.listen(PORT, () => {
