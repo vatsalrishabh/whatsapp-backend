@@ -23,6 +23,12 @@ const userSchema = new mongoose.Schema({
   },
   dpUrl: {
     type: String
+  },
+   whatsappOTP: {
+    type: String
+  },
+   emailOTP: {
+    type: String
   }
 });
 

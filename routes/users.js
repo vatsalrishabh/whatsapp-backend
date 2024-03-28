@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const nodemailer = require('nodemailer');
+const generateEmailOTP = require('./EmailOTP');
 
 // Function to send email using Nodemailer
 async function sendEmail(email, otp) {
@@ -20,7 +21,7 @@ async function sendEmail(email, otp) {
             from: 'vatsalrishabh00@gmail.com', // Sender address (your Gmail email address)
             to: email, // Receiver address
             subject: 'OTP for registration', // Subject line
-            text: `Your OTP for registration is: ${otp}` // Plain text body
+            text: `Your OTP to verify your email is : ${otp}` // Plain text body
         };
 
         // Send mail with defined transport object
@@ -51,13 +52,15 @@ router.post('/', async (req, res) => {
         }
 
         // Generate OTP
-        const otp = '243433'; // Your constant OTP value
+        const otp = generateEmailOTP(); // Your constant OTP value
 
         // Send OTP to email
         await sendEmail(email, otp);
 
         // Store user data in MongoDB
-        const user = new User({ name, email, mobile, gender, dpUrl });
+        whatsappOTP="";
+        emailOTP="";
+        const user = new User({ name, email, mobile, gender, dpUrl,whatsappOTP,emailOTP });
         await user.save();
         
         res.status(201).json(user);
