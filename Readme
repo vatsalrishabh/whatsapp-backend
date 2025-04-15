@@ -1,4 +1,4 @@
-# 📱 Integrating WhatsApp OTP API into a Monolithic Architecture
+# 📱 <h1>Integrating WhatsApp OTP API into a Monolithic Architecture</h1>
 
 This project integrates WhatsApp-based OTP functionality into a monolithic Node.js backend using `whatsapp-web.js`, `mongoose`, `nodemailer`, and `socket.io`.
 
